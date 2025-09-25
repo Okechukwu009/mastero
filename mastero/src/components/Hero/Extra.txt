@@ -1,0 +1,665 @@
+/* Carousel Controls */
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.carousel-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-btn svg {
+  width: 20px;
+  height: 20px;
+  color: #333;
+}
+
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
+/* Slide Numbers */
+.slide-numbers {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  z-index: 4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.slide-separator {
+  margin: 0 4px;
+  opacity: 0.6;
+}
+
+.current-slide {
+  color: #000;
+}
+
+.total-slides {
+  opacity: 0.6;
+}/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #f8f6ff 0%, #f0ebff 100%);
+  min-height: 80vh;
+  padding: 60px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  min-height: 500px;
+}
+
+/* Left Content */
+.hero-content {
+  max-width: 500px;
+}
+
+.hero-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666666;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #000000;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.hero-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666666;
+  margin-bottom: 40px;
+  max-width: 450px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+.btn-secondary:hover {
+  background-color: #000000;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .btn-arrow,
+.btn-secondary:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Right Images Carousel */
+.hero-images {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-image {
+  position: relative;
+  z-index: 2;
+}
+
+.model-image {
+  width: 280px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.secondary-images {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.image-card {
+  position: absolute;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  padding: 8px;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 160px;
+  z-index: 3;
+}
+
+.bottom-left {
+  bottom: 60px;
+  left: 0;
+  width: 100px;
+  height: 120px;
+  z-index: 1;
+}
+
+.image-nav {
+  position: absolute;
+  bottom: -20px;
+  right: 50px;
+  display: flex;
+  gap: 8px;
+  z-index: 4;
+}
+
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background-color: #cccccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-dot.active {
+  background-color: #000000;
+  transform: scale(1.2);
+}
+
+.nav-dot:hover {
+  background-color: #666666;
+}
+
+/* Statistics Section */
+.hero-stats {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 40px 0;
+  margin-top: 40px;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #666666;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+    order: 2;
+  }
+  
+  .hero-images {
+    order: 1;
+    height: 400px;
+  }
+  
+  .hero-title {
+    font-size: 40px;
+  }
+  
+  .model-image {
+    width: 240px;
+    height: 360px;
+  }
+  
+  .top-right {
+    width: 100px;
+    height: 140px;
+  }
+  
+  .bottom-left {
+    width: 80px;
+    height: 100px;
+  }
+  
+  .carousel-controls {
+    padding: 0 10px;
+  }
+  
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .carousel-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 0 0;
+    min-height: 70vh;
+  }
+  
+  .hero-container {
+    padding: 0 16px;
+    gap: 32px;
+  }
+  
+  .hero-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-description {
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 14px 24px;
+    font-size: 13px;
+  }
+  
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .stat-number {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-images {
+    height: 320px;
+  }
+  
+  .model-image {
+    width: 200px;
+    height: 300px;
+  }
+  
+  .top-right {
+    width: 80px;
+    height: 120px;
+  }
+  
+  .bottom-left {
+    width: 70px;
+    height: 80px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+  
+  .carousel-btn {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .carousel-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .slide-numbers {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React, { useState, useEffect } from 'react';
+import './Hero.css';
+
+const Hero = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    // Carousel data with your asset images
+    const carouselData = [
+        {
+            id: 1,
+            mainImage: '/src/assets/model-1.jpg',
+            topImage: '/src/assets/fashion-1.jpg',
+            bottomImage: '/src/assets/clothes-1.jpg'
+        },
+        {
+            id: 2,
+            mainImage: '/src/assets/model-1.jpg',
+            topImage: '/src/assets/fashion-1.jpg',
+            bottomImage: '/src/assets/clothes-1.jpg'
+        },
+        {
+            id: 3,
+            mainImage: '/src/assets/model-1.jpg',
+            topImage: '/src/assets/fashion-1.jpg',
+            bottomImage: '/src/assets/clothes-1.jpg'
+        }
+    ];
+
+    // Auto-play carousel
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % carouselData.length);
+        }, 4000);
+
+        return () => clearInterval(interval);
+    }, [carouselData.length]);
+
+    const goToSlide = (index) => {
+        setCurrentSlide(index);
+    };
+
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % carouselData.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + carouselData.length) % carouselData.length);
+    };
+
+    return (
+        <section className="hero">
+            <div className="hero-container">
+                {/* Left Content */}
+                <div className="hero-content">
+                    <div className="hero-tag">
+                        <span className="tag-dot"></span>
+                        Discover Fashion with Purpose
+                    </div>
+
+                    <h1 className="hero-title">
+                        Focuses on comfort and lasting style
+                    </h1>
+
+                    <p className="hero-description">
+                        Discover fashion that reflects your values and your style. Sustainably
+                        sourced, thoughtfully designed, endlessly stylish.
+                    </p>
+
+                    <div className="hero-buttons">
+                        <button className="btn-primary">
+                            Shop Now
+                            <svg className="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                        </button>
+
+                        <button className="btn-secondary">
+                            Trendy Collections
+                            <svg className="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                {/* Right Images Carousel */}
+                <div className="hero-images">
+                    <div className="carousel-container">
+                        <div className="main-image">
+                            <img
+                                src={carouselData[currentSlide].mainImage}
+                                alt={`Fashion Model ${currentSlide + 1}`}
+                                className="model-image"
+                            />
+                        </div>
+
+                        <div className="secondary-images">
+                            <div className="image-card top-right">
+                                <img
+                                    src={carouselData[currentSlide].topImage}
+                                    alt={`Fashion Collection ${currentSlide + 1}`}
+                                />
+                            </div>
+
+                            <div className="image-card bottom-left">
+                                <img
+                                    src={carouselData[currentSlide].bottomImage}
+                                    alt={`Clothing Items ${currentSlide + 1}`}
+                                />
+                            </div>
+                        </div>
+
+                        {/* Carousel Controls */}
+                        <div className="carousel-controls">
+                            <button className="carousel-btn prev" onClick={prevSlide}>
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                                </svg>
+                            </button>
+
+                            <button className="carousel-btn next" onClick={nextSlide}>
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Slide Numbers */}
+                    <div className="slide-numbers">
+                        <span className="current-slide">{currentSlide + 1}</span>
+                        <span className="slide-separator">/</span>
+                        <span className="total-slides">{carouselData.length}</span>
+                    </div>
+
+                    {/* Navigation dots */}
+                    <div className="image-nav">
+                        {carouselData.map((_, index) => (
+                            <button
+                                key={index}
+                                className={`nav-dot ${index === currentSlide ? 'active' : ''}`}
+                                onClick={() => goToSlide(index)}
+                                aria-label={`Go to slide ${index + 1}`}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* Statistics Section */}
+            <div className="hero-stats">
+                <div className="stats-container">
+                    <div className="stat-item">
+                        <h3 className="stat-number">30k+</h3>
+                        <p className="stat-label">Happy Customers</p>
+                    </div>
+
+                    <div className="stat-item">
+                        <h3 className="stat-number">500+</h3>
+                        <p className="stat-label">New Products</p>
+                    </div>
+
+                    <div className="stat-item">
+                        <h3 className="stat-number">50M+</h3>
+                        <p className="stat-label">Followers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Hero;
+
+
+
