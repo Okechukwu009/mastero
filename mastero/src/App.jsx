@@ -4,7 +4,7 @@ import './App.css';
 // Import all components (you'll create these separately)
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
-// import Categories from './components/Categories/Categories';
+import Categories from './components/Categories/Categories';
 // import FeaturedProducts from './components/FeaturedProducts/FeaturedProducts';
 // import BrandLogos from './components/BrandLogos/BrandLogos';
 // import RecommendedProducts from './components/RecommendedProducts/RecommendedProducts';
@@ -22,7 +22,7 @@ function App() {
       {/* Main Content Wrapper */}
       <main className="main-content">
         <Hero />
-        {/* <Categories /> */}
+        <Categories />
         {/* <FeaturedProducts /> */}
         {/* <BrandLogos /> */}
         {/* <RecommendedProducts /> */}

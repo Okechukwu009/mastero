@@ -78,14 +78,14 @@
 /* Hero Section */
 .hero {
   background: linear-gradient(135deg, #f8f6ff 0%, #f0ebff 100%);
-  min-height: 80vh;
+  /* min-height: 80vh; */
   padding: 65px 0 0;
   position: relative;
   overflow: hidden;
 }
 
 .hero-container {
-  max-width: 1320px;
+  max-width: 1350px;
   margin: 0 auto;
   padding: 0 24px;
   display: grid;
@@ -100,7 +100,7 @@
   max-width: 660px;
 }
 
-.hero-tag {
+/* .hero-tag {
   display: inline-flex;
   align-items: center;
   background-color: #E8E8E8;
@@ -113,6 +113,24 @@
   margin-bottom: 22px;
   letter-spacing: 0.5px;
   width: fit-content;
+} */
+ .hero-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #434343;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
 }
 
 .tag-dot {
@@ -527,7 +545,7 @@
 }
 
 .bottom-left {
-  animation-delay: 1.5s;
+  animation-delay: 1s;
 }
 
 /* Optional: Pause animation on hover */
