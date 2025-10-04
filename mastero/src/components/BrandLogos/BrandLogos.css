@@ -1,0 +1,114 @@
+.brand-logos-section {
+  width: 100%;
+  background: linear-gradient(135deg, #f5e6d3 0%, #f5e6d3 50%, #f5e6d3 100%);
+  padding: 30px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.brand-logos-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scrolling-text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.text-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.text-item {
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-style: italic;
+  padding: 0 40px;
+}
+
+.text-separator {
+  display: inline-block;
+  font-size: 24px;
+  color: #000000;
+  padding: 0 40px;
+  font-weight: 400;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.scrolling-text:hover .text-track {
+  animation-play-state: paused;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .brand-logos-section {
+    padding: 25px 0;
+  }
+
+  .text-item {
+    font-size: 22px;
+    padding: 0 30px;
+  }
+
+  .text-separator {
+    font-size: 20px;
+    padding: 0 30px;
+  }
+
+  .text-track {
+    animation: scroll 25s linear infinite;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand-logos-section {
+    padding: 20px 0;
+  }
+
+  .text-item {
+    font-size: 18px;
+    padding: 0 20px;
+    letter-spacing: 1px;
+  }
+
+  .text-separator {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+
+  .text-track {
+    animation: scroll 20s linear infinite;
+  }
+}
+
+@media (max-width: 400px) {
+  .text-item {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  .text-separator {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+}
